@@ -1,6 +1,3 @@
-### To start server: `uvicorn app:main`
-
-
 ### How I deployed on my Ubuntu server
 
 
