@@ -19,6 +19,9 @@ server {
 4. `sudo ufw enable`
 5. `sudo service nginx restart`
 
+**Prep the config database directory**
+1. `mkdir ~/ovpn-client-configs/`
+
 **Start the API service**
 1. `sudo chmod +x ./generate_config`
 2. `uvicorn bobvpnAPI:app --port 8003`

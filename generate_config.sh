@@ -22,7 +22,7 @@ new_client () {
 cd /etc/openvpn/server/easy-rsa/
 ./easyrsa --batch --days=3650 build-client-full "$1" nopass
 # Generates the custom client.ovpn
-new_client
+new_client "$1"
 echo
-echo "$client added. Configuration available in:" ~/ovpn-client-configs/"$1.ovpn"
+echo "$1 added. Configuration available in:" ~/ovpn-client-configs/"$1.ovpn"
 exit
