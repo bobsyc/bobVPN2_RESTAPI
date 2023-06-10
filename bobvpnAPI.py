@@ -25,7 +25,7 @@ def get_api_key(
 )
 
 def generate_openvpn_config(client_name: str):
-    subprocess.run(["./generate_config.sh", client_name])
+    subprocess.run(["./generate_config.sh", client_name], check=True)
 
 
 @app.post("/generate_config")
