@@ -34,5 +34,5 @@ async def generate_config(client_name: str, api_key: str = Security(get_api_key)
     if not os.path.exists(config_file_path):
         generate_openvpn_config(client_name)
     
-    return FileResponse(config_file_path, filename=f"{configFolderPath}/{client_name}.ovpn")
+    return FileResponse(config_file_path)
 
