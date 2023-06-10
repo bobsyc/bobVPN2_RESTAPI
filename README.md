@@ -20,5 +20,6 @@ server {
 5. `sudo service nginx restart`
 
 **Start the API service**
-1. `uvicorn bobvpnAPI:app --port 8003`
+1. `sudo chmod +x ./generate_config`
+2. `uvicorn bobvpnAPI:app --port 8003`
 
