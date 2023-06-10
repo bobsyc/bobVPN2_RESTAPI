@@ -22,5 +22,5 @@ cd /etc/openvpn/server/easy-rsa/
 # Generates the custom client.ovpn
 new_client
 echo
-echo "$client added. Configuration available in:" ~/ovpn-client-configs/"$client.ovpn"
+echo "$client added. Configuration available in:" ~/ovpn-client-configs/"$1.ovpn"
 exit
