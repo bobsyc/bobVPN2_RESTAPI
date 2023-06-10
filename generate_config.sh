@@ -16,14 +16,14 @@ new_client () {
         echo "<tls-crypt>"
         sed -ne '/BEGIN OpenVPN Static key/,$ p' /etc/openvpn/server/tc.key
         echo "</tls-crypt>"
-        } > ~/ovpn-client-configs/"$1".ovpn
+        } > "$2"/"$1".ovpn
 }
 
 cd /etc/openvpn/server/easy-rsa/
 ./easyrsa --batch --days=3650 build-client-full "$1" nopass
 # Generates the custom client.ovpn
-new_client "$1"
+new_client "$1" "$2"
 echo
-echo "$1 added. Configuration available in:" ~/ovpn-client-configs/"$1.ovpn"
+echo "$1 added. Configuration available in:" "$2"/"$1.ovpn"
 exit
 
