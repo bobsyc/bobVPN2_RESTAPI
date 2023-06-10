@@ -1,0 +1,1 @@
+### To start server: `uvicorn app:main`
