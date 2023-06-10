@@ -1,3 +1,5 @@
+#!/bin/sh
+
 new_client () {
         # Generates the custom client.ovpn
         {
