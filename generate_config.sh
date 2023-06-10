@@ -26,3 +26,4 @@ new_client "$1"
 echo
 echo "$1 added. Configuration available in:" ~/ovpn-client-configs/"$1.ovpn"
 exit
+

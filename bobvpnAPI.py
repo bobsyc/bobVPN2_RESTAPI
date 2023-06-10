@@ -9,7 +9,7 @@ app = FastAPI()
 
 # CONSTANTS
 API_KEY = "BOBVPNISTHEBEST" 
-configFolderPath = "~/ovpn-client-configs"
+configFolderPath = os.path.expanduser("~/ovpn-client-configs")
 # END CONSTANTS
 
 api_key_query = APIKeyQuery(name="api-key", auto_error=False)
@@ -29,7 +29,7 @@ def generate_openvpn_config(client_name: str):
 
 
 @app.post("/generate_config")
-async def generate_config(client_name: str, api_key: str = Security(get_api_key)):
+def generate_config(client_name: str, api_key: str = Security(get_api_key)):
     config_file_path = f"{configFolderPath}/{client_name}.ovpn"
     if not os.path.exists(config_file_path):
         generate_openvpn_config(client_name)
