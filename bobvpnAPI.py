@@ -24,15 +24,12 @@ def get_api_key(
         detail="Invalid or missing API Key",
 )
 
-def generate_openvpn_config(client_name: str):
-    subprocess.run(["./generate_config.sh", client_name, configFolderPath], check=True)
-
 
 @app.post("/generate_config")
-def generate_config(client_name: str, api_key: str = Security(get_api_key)):
+async def generate_config(client_name: str, api_key: str = Security(get_api_key)):
     config_file_path = f"{configFolderPath}/{client_name}.ovpn"
     if not os.path.exists(config_file_path):
-        generate_openvpn_config(client_name)
+        subprocess.run(["./generate_config.sh", client_name, configFolderPath], check=True)
     
     return FileResponse(config_file_path)
 
