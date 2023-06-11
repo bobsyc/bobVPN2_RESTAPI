@@ -57,6 +57,7 @@ Authorization: Bearer BOBVPNISTHEBEST
 {
   "client_name": "john_doe"
 }
+```
 
 Response:
 ```http
