@@ -59,7 +59,7 @@ Authorization: Bearer BOBVPNISTHEBEST
 }
 
 Response:
-```
+```http
 HTTP/1.1 200 OK
 Content-Type: application/octet-stream
 Content-Disposition: attachment; filename="john_doe.ovpn"
@@ -69,7 +69,7 @@ Content-Disposition: attachment; filename="john_doe.ovpn"
 
 or
 
-```
+```http
 HTTP/1.1 401 Unauthorized
 Content-Type: application/json
 
