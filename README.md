@@ -26,6 +26,8 @@ server {
 1. `sudo chmod +x ./generate_config`
 2. `uvicorn bobvpnAPI:app --port 8003`
 
+or with [pm2](https://pm2.keymetrics.io/): `pm2 start "uvicorn bobvpnAPI:app --port 8003" --name bobapi`
+
 ## API Reference
 
 ### Generate Config [POST]
